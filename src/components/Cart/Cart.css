@@ -1,0 +1,46 @@
+.cart {
+  position: sticky;
+  top: 20px;
+}
+
+.cart h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cart > p {
+  font-size: 17px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.cart-btn {
+    color: white;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clear-cart-btn {
+  background-color: #ff3030;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.clear-cart-btn:hover {
+  background-color: blueviolet;
+}
+
+.review-order-btn {
+  background-color: #ff9900;
+}
+
+.review-order-btn:hover {
+  background-color: #000;
+  color: white;
+}
+
+.cart-btn p {
+    margin-right: 10px;
+}
