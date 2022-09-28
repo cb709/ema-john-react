@@ -3,8 +3,9 @@ import "./Product.css";
 import icon from "../../images/cart-plus.svg";
 
 const Product = (props) => {
-  console.log(props.product);
+    // console.log(props.handle);
   const { ratings, seller, img, name, price } = props.product;
+
   return (
     <div className="product border rounded-1">
       <div className="product-data">
@@ -21,8 +22,8 @@ const Product = (props) => {
         </div>
       </div>
       <div className="add-to-cart">
-        <button className="btn add-to-cart-btn">
-          Add To Cart{" "}
+        <button onClick={()=> props.handle(props.product)} className="btn add-to-cart-btn">
+          Add To Cart
           <img className="add-to-cart-btn-icon" src={icon} alt="logo" />
         </button>
       </div>
