@@ -13,9 +13,15 @@ const Shop = () => {
       .then((data) => setProducts(data));
   }, []);
 
+  //handle add to cart
   const handleAddToCart = (product) => {
-    // console.log(product);
     const newCart = [...cart, product]
+    setCart(newCart)
+  };
+
+  //clearing cart 
+  const clearCart = () => {
+    const newCart = []
     setCart(newCart)
   };
 
@@ -46,7 +52,7 @@ const Shop = () => {
       </div>
       </div>
       <div className="cart-container border">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} clearCart={clearCart}></Cart>
       </div>
     </div>
   );
