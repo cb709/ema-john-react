@@ -43,23 +43,17 @@ const Shop = () => {
     setCart(savedCart);
   }, [products]);
 
-
-
-
   //handle add to cart
   const handleAddToCart = (product) => {
     addToDb(product.id);
-    const storedData = getStoredData();
-    const savedCart = [];
-    for (const id in storedData) {
-      const addedProduct = products.find((product) => product.id === id);
-      if (addedProduct) {
-        addedProduct.quantity = storedData[id];
-        savedCart.push(addedProduct);
-      }
+    let newCart = [...cart];
+    if(newCart.indexOf(product) >= 0){
+      newCart[newCart.indexOf(product)].quantity++; 
+    }else {
+      product.quantity = 1;
+      newCart.push(product)
     }
-    // const savedCart = updateCart()
-    setCart(savedCart);
+    setCart(newCart)
   };
 
   //clearing cart
