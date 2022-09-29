@@ -4,9 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = ({ cart , clearCart}) => {
-  console.log(cart);
+    // console.log(cart)
+  const quantity = cart.reduce(
+    (previous, current) => previous + current.quantity,
+    0
+  );
   const totalPrice = cart.reduce(
-    (previous, current) => previous + parseInt(current.price),
+    (previous, current) => previous + parseInt(current.price * current.quantity),
     0
   );
   const totalShipping = cart.reduce(
@@ -20,7 +24,7 @@ const Cart = ({ cart , clearCart}) => {
     <div className="cart">
       <h3>Order Summary</h3>
       <p>
-        <strong>Selected Products:</strong> {cart.length}
+        <strong>Selected Products:</strong> {quantity}
       </p>
       <p>
         <strong>Total Price:</strong> {totalPrice}$
